@@ -47,6 +47,8 @@ RUN chmod +x /tmp/zsh-in-docker.sh && \
     -a 'bindkey "\$terminfo[kcuu1]" history-substring-search-up' \
     -a 'bindkey "\$terminfo[kcud1]" history-substring-search-down'
 
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 COPY ./zsh/.p10k.zsh /root
 
 COPY ./zsh/.tmux.conf /root

@@ -39,6 +39,8 @@ RUN chmod +x /tmp/zsh-in-docker.sh && \
 
 RUN go get github.com/go-delve/delve/cmd/dlv
 
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 COPY ./zsh/.p10k.zsh /root
 
 COPY ./zsh/.tmux.conf /root
